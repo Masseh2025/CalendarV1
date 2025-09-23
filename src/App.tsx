@@ -3,9 +3,7 @@ import "./index.css";
 export default function App() {
   return (
     <>
-      <main>
-        <Calendar />
-      </main>
+      <Calendar />
     </>
   );
 }
