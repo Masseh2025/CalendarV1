@@ -20,7 +20,7 @@ export function Calendar() {
   return (
     <main className="bg-neutral-50 w-full h-screen">
       <CalendarHeader month={date.getMonth()} />
-      <CalendarGrid />
+      <CalendarGrid date={date} />
     </main>
   );
 }

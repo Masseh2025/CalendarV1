@@ -4,7 +4,7 @@ type CalendarHeaderType = {
 
 export function CalendarHeader({ month }: CalendarHeaderType) {
   return (
-    <div>
+    <div className="h-[15vh]">
       <h1>Today is {monthNames[month]}</h1>
     </div>
   );
