@@ -2,39 +2,51 @@ import { ChevronUpCircle, ChevronDownCircle } from "lucide-react";
 
 type CalendarHeaderType = {
   month: number;
+  year: number;
+  onPreviousMonth: () => void;
+  onNextMonth: () => void;
 };
 
-export function CalendarHeader({ month }: CalendarHeaderType) {
+export function CalendarHeader({
+  month,
+  year,
+  onPreviousMonth,
+  onNextMonth,
+}: CalendarHeaderType) {
   return (
-    <div className="h-[15vh] flex justify-center items-baseline">
-      <ChevronUpCircle
-        size={24}
-        className="text-neutral-600 hover:text-blue-500 cursor-pointer"
-      />
+    <header className="w-full flex justify-center">
+      <div className="h-[15vh] w-full flex justify-center items-baseline pt-4 font-mono relative">
+        <ChevronUpCircle
+          size={32}
+          className="text-neutral-600 hover:text-blue-500 cursor-pointer transition-colors mr-30"
+          onClick={onPreviousMonth}
+        />
 
-      <h1 className="text-4xl font-bold text-neutral-800 p-4 text-center">
-        {monthNames[month]}
-      </h1>
-      <ChevronDownCircle
-        size={24}
-        className="text-neutral-600 hover:text-blue-500 cursor-pointer"
-      />
-    </div>
+        <h1 className="text-4xl font-bold text-neutral-800 font-mono absolute">
+          {monthNames[month]} {year}
+        </h1>
+
+        <ChevronDownCircle
+          size={32}
+          className="text-neutral-600 hover:text-blue-500 cursor-pointer transition-colors ml-30"
+          onClick={onNextMonth}
+        />
+      </div>
+    </header>
   );
 }
 
 const monthNames = [
-  "January",
-  "February",
+  "Jan",
+  "Feb",
   "March",
   "April",
   "May",
   "June",
   "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-  ``,
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
 ];
