@@ -22,7 +22,7 @@ export function CalendarHeader({
           onClick={onPreviousMonth}
         />
 
-        <h1 className="text-4xl font-bold text-neutral-800 font-mono absolute">
+        <h1 className="text-4xl font-bold text-neutral-800 font-mono absolute select-none">
           {monthNames[month]} {year}
         </h1>
 
